@@ -29,7 +29,7 @@ public class Grid {
 
     private Cell[][] anArrayOfDeadCells(final int rows, final int columns) {
         Cell[][] deadCells = new Cell[rows][columns];
-        for (int i = 1; i < rows; i++) {
+        for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 deadCells[i][j] = DEAD_CELL;
             }
