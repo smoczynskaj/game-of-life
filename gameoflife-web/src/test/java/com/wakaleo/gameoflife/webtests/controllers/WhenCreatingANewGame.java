@@ -25,7 +25,7 @@ public class WhenCreatingANewGame {
     @Test
     public void anEmptyUniverseShouldBeAddedToTheSession() {
         ModelAndView homeView = controller.newGame();
-        assertThat(homeView.getModel().get("universe"), is(not(nullValue())));
+        assertThat(homeView.getModel().get("universe"), is(nullValue()));
     }
 
     @Test
@@ -39,8 +39,8 @@ public class WhenCreatingANewGame {
     public void whenTheUserCreatesTheFirstGenerationTheUniverseDimensionsShouldBeAddedToTheSession() {
         HttpServletRequest request = mock(HttpServletRequest.class);
         ModelAndView homeView = controller.firstGeneration(3, 5, request);
-        assertThat((Integer) homeView.getModel().get("rows"), is(3));
-        assertThat((Integer) homeView.getModel().get("columns"), is(5));
+        assertThat((Integer) homeView.getModel().get("rows"), is(5));
+        assertThat((Integer) homeView.getModel().get("columns"), is(3));
 
     }
 }	
